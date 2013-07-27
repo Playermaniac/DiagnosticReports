@@ -1,0 +1,457 @@
+Process:         Bitcoin-Qt [2462]
+Path:            /Applications/Bitcoin-Qt.app/Contents/MacOS/Bitcoin-Qt
+Identifier:      org.bitcoinfoundation.Bitcoin-Qt
+Version:         0.8.3 (0.8.3)
+Code Type:       X86 (Native)
+Parent Process:  launchd [216]
+User ID:         501
+
+Date/Time:       2013-07-27 22:42:43.149 +0200
+OS Version:      Mac OS X 10.8.4 (12E55)
+Report Version:  10
+
+Crashed Thread:  5
+
+Exception Type:  EXC_CRASH (SIGABRT)
+Exception Codes: 0x0000000000000000, 0x0000000000000000
+
+Application Specific Information:
+Assertion failed: (r->options.comparator->Compare(key, Slice(r->last_key)) > 0), function Add, file table/table_builder.cc, line 97.
+ 
+
+Thread 0:: Dispatch queue: com.apple.main-thread
+0   libsystem_kernel.dylib        	0x928977d2 mach_msg_trap + 10
+1   libsystem_kernel.dylib        	0x92896cb0 mach_msg + 68
+2   com.apple.CoreFoundation      	0x982c6f79 __CFRunLoopServiceMachPort + 185
+3   com.apple.CoreFoundation      	0x982cc95f __CFRunLoopRun + 1247
+4   com.apple.CoreFoundation      	0x982cc01a CFRunLoopRunSpecific + 378
+5   com.apple.CoreFoundation      	0x982cbe8b CFRunLoopRunInMode + 123
+6   com.apple.HIToolbox           	0x9a302f5a RunCurrentEventLoopInMode + 242
+7   com.apple.HIToolbox           	0x9a302cc9 ReceiveNextEventCommon + 374
+8   com.apple.HIToolbox           	0x9a302b44 BlockUntilNextEventMatchingListInMode + 88
+9   com.apple.AppKit              	0x985ef93a _DPSNextEvent + 724
+10  com.apple.AppKit              	0x985ef16c -[NSApplication nextEventMatchingMask:untilDate:inMode:dequeue:] + 119
+11  com.apple.AppKit              	0x985e55cc -[NSApplication run] + 855
+12  QtGui                         	0x00d637fa QDesktopWidget::resizeEvent(QResizeEvent*) + 12890
+13  QtCore                        	0x019cd471 QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) + 65
+14  QtCore                        	0x019cd84a QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) + 314
+15  QtCore                        	0x019cff26 QCoreApplication::exec() + 182
+16  org.bitcoinfoundation.Bitcoin-Qt	0x00022407 main + 7975
+17  org.bitcoinfoundation.Bitcoin-Qt	0x0001f501 start + 53
+
+Thread 1:: Dispatch queue: com.apple.libdispatch-manager
+0   libsystem_kernel.dylib        	0x9289a9ae kevent + 10
+1   libdispatch.dylib             	0x91705c71 _dispatch_mgr_invoke + 993
+2   libdispatch.dylib             	0x917057a9 _dispatch_mgr_thread + 53
+
+Thread 2:: com.apple.CFSocket.private
+0   libsystem_kernel.dylib        	0x92899be6 __select + 10
+1   com.apple.CoreFoundation      	0x98310650 __CFSocketManager + 1632
+2   libsystem_c.dylib             	0x995245b7 _pthread_start + 344
+3   libsystem_c.dylib             	0x9950ed4e thread_start + 34
+
+Thread 3:
+0   libsystem_kernel.dylib        	0x92899be6 __select + 10
+1   QtCore                        	0x019ffa90 qt_safe_select(int, fd_set*, fd_set*, fd_set*, timeval const*) + 320
+2   QtCore                        	0x01a03dda QEventDispatcherUNIXPrivate::doSelect(QFlags<QEventLoop::ProcessEventsFlag>, timeval*) + 394
+3   QtCore                        	0x01a0426f QEventDispatcherUNIX::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) + 175
+4   QtCore                        	0x019cd471 QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) + 65
+5   QtCore                        	0x019cd84a QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) + 314
+6   QtCore                        	0x018aba45 QThread::exec() + 261
+7   QtCore                        	0x018af0d3 QThread::terminate() + 787
+8   libsystem_c.dylib             	0x995245b7 _pthread_start + 344
+9   libsystem_c.dylib             	0x9950ed4e thread_start + 34
+
+Thread 4:
+0   libsystem_kernel.dylib        	0x928998e2 __psynch_cvwait + 10
+1   libsystem_c.dylib             	0x99529280 _pthread_cond_wait + 833
+2   libsystem_c.dylib             	0x995af095 pthread_cond_wait$UNIX2003 + 71
+3   org.bitcoinfoundation.Bitcoin-Qt	0x000aed52 boost::condition_variable::wait(boost::unique_lock<boost::mutex>&) + 354
+4   org.bitcoinfoundation.Bitcoin-Qt	0x0011428d CCheckQueue<CScriptCheck>::Loop(bool) + 413
+5   org.bitcoinfoundation.Bitcoin-Qt	0x000c3d93 ThreadScriptCheck() + 67
+6   libboost_thread-mt.dylib      	0x00ce8845 boost::detail::thread_data_base::~thread_data_base() + 779
+7   libsystem_c.dylib             	0x995245b7 _pthread_start + 344
+8   libsystem_c.dylib             	0x9950ed4e thread_start + 34
+
+Thread 5 Crashed:
+0   libsystem_kernel.dylib        	0x92899a6a __pthread_kill + 10
+1   libsystem_c.dylib             	0x99525b2f pthread_kill + 101
+2   libsystem_c.dylib             	0x9955c4ec abort + 168
+3   libsystem_c.dylib             	0x9956ad2b __assert_rtn + 326
+4   org.bitcoinfoundation.Bitcoin-Qt	0x00302903 leveldb::TableBuilder::Add(leveldb::Slice const&, leveldb::Slice const&) + 643
+5   org.bitcoinfoundation.Bitcoin-Qt	0x002debc4 leveldb::DBImpl::DoCompactionWork(leveldb::DBImpl::CompactionState*) + 1828
+6   org.bitcoinfoundation.Bitcoin-Qt	0x002df3c2 leveldb::DBImpl::BackgroundCompaction() + 354
+7   org.bitcoinfoundation.Bitcoin-Qt	0x002dfe62 leveldb::DBImpl::BackgroundCall() + 162
+8   org.bitcoinfoundation.Bitcoin-Qt	0x0030a35e leveldb::(anonymous namespace)::PosixEnv::BGThreadWrapper(void*) + 142
+9   libsystem_c.dylib             	0x995245b7 _pthread_start + 344
+10  libsystem_c.dylib             	0x9950ed4e thread_start + 34
+
+Thread 6:
+0   libsystem_kernel.dylib        	0x928998e2 __psynch_cvwait + 10
+1   libsystem_c.dylib             	0x99529280 _pthread_cond_wait + 833
+2   libsystem_c.dylib             	0x995af095 pthread_cond_wait$UNIX2003 + 71
+3   org.bitcoinfoundation.Bitcoin-Qt	0x0030d701 leveldb::port::CondVar::Wait() + 49
+4   org.bitcoinfoundation.Bitcoin-Qt	0x002db248 leveldb::DBImpl::MakeRoomForWrite(bool) + 472
+5   org.bitcoinfoundation.Bitcoin-Qt	0x002db683 leveldb::DBImpl::Write(leveldb::WriteOptions const&, leveldb::WriteBatch*) + 371
+6   org.bitcoinfoundation.Bitcoin-Qt	0x002c0037 CLevelDB::WriteBatch(CLevelDBBatch&, bool) + 87
+7   org.bitcoinfoundation.Bitcoin-Qt	0x002c0752 CBlockTreeDB::WriteBlockFileInfo(int, CBlockFileInfo const&) + 1058
+8   org.bitcoinfoundation.Bitcoin-Qt	0x000c3201 FindUndoPos(CValidationState&, int, CDiskBlockPos&, unsigned int) + 609
+9   org.bitcoinfoundation.Bitcoin-Qt	0x000cc73c CBlock::ConnectBlock(CValidationState&, CBlockIndex*, CCoinsViewCache&, bool) + 5660
+10  org.bitcoinfoundation.Bitcoin-Qt	0x000d1aad SetBestChain(CValidationState&, CBlockIndex*) + 2829
+11  org.bitcoinfoundation.Bitcoin-Qt	0x000d3538 ConnectBestBlock(CValidationState&) + 824
+12  org.bitcoinfoundation.Bitcoin-Qt	0x000d427e CBlock::AddToBlockIndex(CValidationState&, CDiskBlockPos const&) + 2254
+13  org.bitcoinfoundation.Bitcoin-Qt	0x000d5fbf CBlock::AcceptBlock(CValidationState&, CDiskBlockPos*) + 623
+14  org.bitcoinfoundation.Bitcoin-Qt	0x000d764e ProcessBlock(CValidationState&, CNode*, CBlock*, CDiskBlockPos*) + 1710
+15  org.bitcoinfoundation.Bitcoin-Qt	0x000e1e80 LoadExternalBlockFile(__sFILE*, CDiskBlockPos*) + 2256
+16  org.bitcoinfoundation.Bitcoin-Qt	0x00118a81 ThreadImport(std::vector<boost::filesystem::path, std::allocator<boost::filesystem::path> >) + 145
+17  org.bitcoinfoundation.Bitcoin-Qt	0x00136c2d boost::detail::thread_data<boost::_bi::bind_t<void, void (*)(std::vector<boost::filesystem::path, std::allocator<boost::filesystem::path> >), boost::_bi::list1<boost::_bi::value<std::vector<boost::filesystem::path, std::allocator<boost::filesystem::path> > > > > >::run() + 205
+18  libboost_thread-mt.dylib      	0x00ce8845 boost::detail::thread_data_base::~thread_data_base() + 779
+19  libsystem_c.dylib             	0x995245b7 _pthread_start + 344
+20  libsystem_c.dylib             	0x9950ed4e thread_start + 34
+
+Thread 7:
+0   libsystem_kernel.dylib        	0x928998e2 __psynch_cvwait + 10
+1   libsystem_c.dylib             	0x99529280 _pthread_cond_wait + 833
+2   libsystem_c.dylib             	0x995af0e0 pthread_cond_timedwait$UNIX2003 + 70
+3   org.bitcoinfoundation.Bitcoin-Qt	0x001136e4 boost::cv_status boost::condition_variable::wait_for<long long, boost::ratio<1ll, 1000000000ll> >(boost::unique_lock<boost::mutex>&, boost::chrono::duration<long long, boost::ratio<1ll, 1000000000ll> > const&) + 692
+4   org.bitcoinfoundation.Bitcoin-Qt	0x00113fd3 void boost::this_thread::sleep_for<long long, boost::ratio<1ll, 1000ll> >(boost::chrono::duration<long long, boost::ratio<1ll, 1000ll> > const&) + 179
+5   org.bitcoinfoundation.Bitcoin-Qt	0x00144522 ThreadMapPort() + 706
+6   org.bitcoinfoundation.Bitcoin-Qt	0x00153bfe void TraceThread<boost::function<void ()> >(char const*, boost::function<void ()>) + 206
+7   org.bitcoinfoundation.Bitcoin-Qt	0x0014dfe4 boost::detail::thread_data<boost::_bi::bind_t<void, void (*)(char const*, boost::function<void ()>), boost::_bi::list2<boost::_bi::value<char const*>, boost::_bi::value<void (*)()> > > >::run() + 132
+8   libboost_thread-mt.dylib      	0x00ce8845 boost::detail::thread_data_base::~thread_data_base() + 779
+9   libsystem_c.dylib             	0x995245b7 _pthread_start + 344
+10  libsystem_c.dylib             	0x9950ed4e thread_start + 34
+
+Thread 8:
+0   libsystem_kernel.dylib        	0x92899be6 __select + 10
+1   org.bitcoinfoundation.Bitcoin-Qt	0x00149fbc ThreadSocketHandler() + 2620
+2   org.bitcoinfoundation.Bitcoin-Qt	0x0015162e void TraceThread<void (*)()>(char const*, void (*)()) + 110
+3   org.bitcoinfoundation.Bitcoin-Qt	0x0014bcdb boost::detail::thread_data<boost::_bi::bind_t<void, void (*)(char const*, void (*)()), boost::_bi::list2<boost::_bi::value<char const*>, boost::_bi::value<void (*)()> > > >::run() + 59
+4   libboost_thread-mt.dylib      	0x00ce8845 boost::detail::thread_data_base::~thread_data_base() + 779
+5   libsystem_c.dylib             	0x995245b7 _pthread_start + 344
+6   libsystem_c.dylib             	0x9950ed4e thread_start + 34
+
+Thread 9:
+0   libsystem_kernel.dylib        	0x928998e2 __psynch_cvwait + 10
+1   libsystem_c.dylib             	0x99529280 _pthread_cond_wait + 833
+2   libsystem_c.dylib             	0x995af0e0 pthread_cond_timedwait$UNIX2003 + 70
+3   org.bitcoinfoundation.Bitcoin-Qt	0x001136e4 boost::cv_status boost::condition_variable::wait_for<long long, boost::ratio<1ll, 1000000000ll> >(boost::unique_lock<boost::mutex>&, boost::chrono::duration<long long, boost::ratio<1ll, 1000000000ll> > const&) + 692
+4   org.bitcoinfoundation.Bitcoin-Qt	0x00113fd3 void boost::this_thread::sleep_for<long long, boost::ratio<1ll, 1000ll> >(boost::chrono::duration<long long, boost::ratio<1ll, 1000ll> > const&) + 179
+5   org.bitcoinfoundation.Bitcoin-Qt	0x001475e2 ThreadOpenAddedConnections() + 2994
+6   org.bitcoinfoundation.Bitcoin-Qt	0x0015162e void TraceThread<void (*)()>(char const*, void (*)()) + 110
+7   org.bitcoinfoundation.Bitcoin-Qt	0x0014bcdb boost::detail::thread_data<boost::_bi::bind_t<void, void (*)(char const*, void (*)()), boost::_bi::list2<boost::_bi::value<char const*>, boost::_bi::value<void (*)()> > > >::run() + 59
+8   libboost_thread-mt.dylib      	0x00ce8845 boost::detail::thread_data_base::~thread_data_base() + 779
+9   libsystem_c.dylib             	0x995245b7 _pthread_start + 344
+10  libsystem_c.dylib             	0x9950ed4e thread_start + 34
+
+Thread 10:
+0   libsystem_kernel.dylib        	0x92899be6 __select + 10
+1   org.bitcoinfoundation.Bitcoin-Qt	0x00090ab7 ConnectSocketDirectly(CService const&, unsigned int&, int) + 679
+2   org.bitcoinfoundation.Bitcoin-Qt	0x00093057 ConnectSocket(CService const&, unsigned int&, int) + 119
+3   org.bitcoinfoundation.Bitcoin-Qt	0x00140e31 ConnectNode(CAddress, char const*) + 1105
+4   org.bitcoinfoundation.Bitcoin-Qt	0x001413c0 OpenNetworkConnection(CAddress const&, CSemaphoreGrant*, char const*, bool) + 496
+5   org.bitcoinfoundation.Bitcoin-Qt	0x001460d4 ThreadOpenConnections() + 2868
+6   org.bitcoinfoundation.Bitcoin-Qt	0x0015162e void TraceThread<void (*)()>(char const*, void (*)()) + 110
+7   org.bitcoinfoundation.Bitcoin-Qt	0x0014bcdb boost::detail::thread_data<boost::_bi::bind_t<void, void (*)(char const*, void (*)()), boost::_bi::list2<boost::_bi::value<char const*>, boost::_bi::value<void (*)()> > > >::run() + 59
+8   libboost_thread-mt.dylib      	0x00ce8845 boost::detail::thread_data_base::~thread_data_base() + 779
+9   libsystem_c.dylib             	0x995245b7 _pthread_start + 344
+10  libsystem_c.dylib             	0x9950ed4e thread_start + 34
+
+Thread 11:
+0   libsystem_kernel.dylib        	0x9289991a __psynch_mutexwait + 10
+1   libsystem_c.dylib             	0x9952a19b pthread_mutex_lock + 595
+2   org.bitcoinfoundation.Bitcoin-Qt	0x00046000 CMutexLock<AnnotatedMixin<boost::recursive_mutex> >::CMutexLock(AnnotatedMixin<boost::recursive_mutex>&, char const*, char const*, int, bool) + 144
+3   org.bitcoinfoundation.Bitcoin-Qt	0x000e1178 ProcessMessages(CNode*) + 920
+4   org.bitcoinfoundation.Bitcoin-Qt	0x00144b1c ThreadMessageHandler() + 828
+5   org.bitcoinfoundation.Bitcoin-Qt	0x0015162e void TraceThread<void (*)()>(char const*, void (*)()) + 110
+6   org.bitcoinfoundation.Bitcoin-Qt	0x0014bcdb boost::detail::thread_data<boost::_bi::bind_t<void, void (*)(char const*, void (*)()), boost::_bi::list2<boost::_bi::value<char const*>, boost::_bi::value<void (*)()> > > >::run() + 59
+7   libboost_thread-mt.dylib      	0x00ce8845 boost::detail::thread_data_base::~thread_data_base() + 779
+8   libsystem_c.dylib             	0x995245b7 _pthread_start + 344
+9   libsystem_c.dylib             	0x9950ed4e thread_start + 34
+
+Thread 12:
+0   libsystem_kernel.dylib        	0x928998e2 __psynch_cvwait + 10
+1   libsystem_c.dylib             	0x99529280 _pthread_cond_wait + 833
+2   libsystem_c.dylib             	0x995af0e0 pthread_cond_timedwait$UNIX2003 + 70
+3   org.bitcoinfoundation.Bitcoin-Qt	0x001136e4 boost::cv_status boost::condition_variable::wait_for<long long, boost::ratio<1ll, 1000000000ll> >(boost::unique_lock<boost::mutex>&, boost::chrono::duration<long long, boost::ratio<1ll, 1000000000ll> > const&) + 692
+4   org.bitcoinfoundation.Bitcoin-Qt	0x00113fd3 void boost::this_thread::sleep_for<long long, boost::ratio<1ll, 1000ll> >(boost::chrono::duration<long long, boost::ratio<1ll, 1000ll> > const&) + 179
+5   org.bitcoinfoundation.Bitcoin-Qt	0x00156361 void LoopForever<void (*)()>(char const*, void (*)(), long long) + 145
+6   org.bitcoinfoundation.Bitcoin-Qt	0x0014bc7e boost::detail::thread_data<boost::_bi::bind_t<void, void (*)(char const*, void (*)(), long long), boost::_bi::list3<boost::_bi::value<char const*>, boost::_bi::value<void (*)()>, boost::_bi::value<int> > > >::run() + 78
+7   libboost_thread-mt.dylib      	0x00ce8845 boost::detail::thread_data_base::~thread_data_base() + 779
+8   libsystem_c.dylib             	0x995245b7 _pthread_start + 344
+9   libsystem_c.dylib             	0x9950ed4e thread_start + 34
+
+Thread 13:
+0   libsystem_kernel.dylib        	0x928998e2 __psynch_cvwait + 10
+1   libsystem_c.dylib             	0x99529280 _pthread_cond_wait + 833
+2   libsystem_c.dylib             	0x995af0e0 pthread_cond_timedwait$UNIX2003 + 70
+3   org.bitcoinfoundation.Bitcoin-Qt	0x001136e4 boost::cv_status boost::condition_variable::wait_for<long long, boost::ratio<1ll, 1000000000ll> >(boost::unique_lock<boost::mutex>&, boost::chrono::duration<long long, boost::ratio<1ll, 1000000000ll> > const&) + 692
+4   org.bitcoinfoundation.Bitcoin-Qt	0x00113fd3 void boost::this_thread::sleep_for<long long, boost::ratio<1ll, 1000ll> >(boost::chrono::duration<long long, boost::ratio<1ll, 1000ll> > const&) + 179
+5   org.bitcoinfoundation.Bitcoin-Qt	0x00169689 ThreadFlushWalletDB(std::string const&) + 329
+6   libboost_thread-mt.dylib      	0x00ce8845 boost::detail::thread_data_base::~thread_data_base() + 779
+7   libsystem_c.dylib             	0x995245b7 _pthread_start + 344
+8   libsystem_c.dylib             	0x9950ed4e thread_start + 34
+
+Thread 14:
+0   libsystem_kernel.dylib        	0x9289a0ee __workq_kernreturn + 10
+1   libsystem_c.dylib             	0x995270ac _pthread_workq_return + 45
+2   libsystem_c.dylib             	0x99526e79 _pthread_wqthread + 448
+3   libsystem_c.dylib             	0x9950ed2a start_wqthread + 30
+
+Thread 15:
+0   libsystem_kernel.dylib        	0x9289a0ee __workq_kernreturn + 10
+1   libsystem_c.dylib             	0x995270ac _pthread_workq_return + 45
+2   libsystem_c.dylib             	0x99526e79 _pthread_wqthread + 448
+3   libsystem_c.dylib             	0x9950ed2a start_wqthread + 30
+
+Thread 16:
+0   libsystem_kernel.dylib        	0x9289a0ee __workq_kernreturn + 10
+1   libsystem_c.dylib             	0x995270ac _pthread_workq_return + 45
+2   libsystem_c.dylib             	0x99526e79 _pthread_wqthread + 448
+3   libsystem_c.dylib             	0x9950ed2a start_wqthread + 30
+
+Thread 5 crashed with X86 Thread State (32-bit):
+  eax: 0x00000000  ebx: 0xacc1a13c  ecx: 0xb041fadc  edx: 0x92899a6a
+  edi: 0xb0420000  esi: 0x00000006  ebp: 0xb041faf8  esp: 0xb041fadc
+   ss: 0x00000023  efl: 0x00000206  eip: 0x92899a6a   cs: 0x0000000b
+   ds: 0x00000023   es: 0x00000023   fs: 0x00000023   gs: 0x0000000f
+  cr2: 0x01f34000
+Logical CPU: 0
+
+Binary Images:
+    0x1000 -   0x5f8fff +org.bitcoinfoundation.Bitcoin-Qt (0.8.3 - 0.8.3) <698ACEAA-642B-495C-6E06-5F53520375F1> /Applications/Bitcoin-Qt.app/Contents/MacOS/Bitcoin-Qt
+  0x892000 -   0x897fe7 +libqrencode.3.dylib (5.1) <9627FE72-1198-798B-1841-A64F967F32FB> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libqrencode.3.dylib
+  0x89b000 -   0x8a2ff7 +libminiupnpc.8.dylib (0) <2DBB7FA6-2198-8004-2ECF-F504F2081317> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libminiupnpc.8.dylib
+  0x8a6000 -   0x8f2fff +libssl.1.0.0.dylib (1) <641EBBF5-C97C-1D6C-EFF0-EB02A7FF7629> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libssl.1.0.0.dylib
+  0x90c000 -   0xa44fef +libcrypto.1.0.0.dylib (1) <0943ABB0-E2CA-20EC-B52D-E3D5E2340F02> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libcrypto.1.0.0.dylib
+  0xaad000 -   0xc06fff +libdb_cxx-4.8.dylib (0) <A2028F0C-1E73-00A3-BA80-2DEF2EAC9ECB> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libdb_cxx-4.8.dylib
+  0xc30000 -   0xc33ff3 +libboost_system-mt.dylib (0) <DC2F474D-A848-B1CA-5E46-EAB30E94A639> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libboost_system-mt.dylib
+  0xc37000 -   0xc4affb +libboost_filesystem-mt.dylib (0) <ED32F1B3-0C00-9EA8-A6E4-B4D69BBB090B> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libboost_filesystem-mt.dylib
+  0xc55000 -   0xc99ff3 +libboost_program_options-mt.dylib (0) <DAE91877-14DE-370A-9571-A2EC1D7AF3D8> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libboost_program_options-mt.dylib
+  0xce4000 -   0xcf6ff3 +libboost_thread-mt.dylib (0) <4F1F450A-6305-F698-98AC-E82075E11758> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libboost_thread-mt.dylib
+  0xd16000 -   0xd1bff3 +libboost_chrono-mt.dylib (0) <7619296E-C4A2-2674-20C7-398C0E5D6C40> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libboost_chrono-mt.dylib
+  0xd23000 -  0x16b3fe3 +QtGui (4.8.4) <C70071A5-F36B-C018-9BEB-181811A0759F> /Applications/Bitcoin-Qt.app/Contents/Frameworks/QtGui.framework/Versions/4/QtGui
+ 0x188a000 -  0x1b39ffb +QtCore (4.8.4) <204CC6C5-048C-4746-D9AD-DF6FA3204CE7> /Applications/Bitcoin-Qt.app/Contents/Frameworks/QtCore.framework/Versions/4/QtCore
+ 0x1bab000 -  0x1cd0ff7 +QtNetwork (4.8.4) <E7999879-10BE-D14A-6BBB-9F36A61819C0> /Applications/Bitcoin-Qt.app/Contents/Frameworks/QtNetwork.framework/Versions/4/QtNetwork
+ 0x1d0c000 -  0x1d1dfe7 +libz.1.dylib (1.2.7) <04F507FA-B0BF-CD40-DB2E-CBF29500AF19> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libz.1.dylib
+ 0x1d21000 -  0x1d42fe7 +libpng15.15.dylib (30) <2E174E7D-8E8B-9F51-6A39-53D3243C159E> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libpng15.15.dylib
+ 0x1f10000 -  0x1f1dff3  com.apple.Librarian (1.1 - 1) <68F8F983-5F16-3BA5-BDA7-1A5451CC02BB> /System/Library/PrivateFrameworks/Librarian.framework/Versions/A/Librarian
+ 0x2c00000 -  0x2cbeff3  ColorSyncDeprecated.dylib (400) <35E3054C-5DF1-30D4-A368-C4FDB0992373> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/Resources/ColorSyncDeprecated.dylib
+ 0x2fda000 -  0x2fdeff3 +libqgif.dylib (0) <88247A6C-7963-6E25-F271-07D15F98CF45> /Applications/Bitcoin-Qt.app/Contents/PlugIns/imageformats/libqgif.dylib
+ 0x2fe3000 -  0x2fe7fff +libqico.dylib (0) <7AE39AE4-C88A-D835-F6DB-43C38C12D8C9> /Applications/Bitcoin-Qt.app/Contents/PlugIns/imageformats/libqico.dylib
+ 0x2fec000 -  0x2ff0fff +libqjpeg.dylib (0) <0D0902B6-EB00-4DEA-37B8-43EEB3552921> /Applications/Bitcoin-Qt.app/Contents/PlugIns/imageformats/libqjpeg.dylib
+ 0x2ff6000 -  0x2ff9ff7 +libqmng.dylib (0) <AED7B482-BE3B-C70A-3E5B-7575C58DBCE3> /Applications/Bitcoin-Qt.app/Contents/PlugIns/imageformats/libqmng.dylib
+ 0x7e3c000 -  0x7e6cfe7 +libjpeg.8.dylib (13) <96B28C90-BE02-5517-87BC-EC348C2EE25C> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libjpeg.8.dylib
+ 0x7e72000 -  0x7ebffe7 +libmng.1.dylib (2) <1A7593E8-6C76-5533-E1BE-51976CB1873C> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libmng.1.dylib
+ 0x7ed4000 -  0x7efcfe7 +liblcms.1.dylib (2.19) <81794FD6-C0FC-79D3-7188-36318A86427A> /Applications/Bitcoin-Qt.app/Contents/Frameworks/liblcms.1.dylib
+ 0x7f06000 -  0x7f08ffb +libqtga.dylib (0) <DF371BC0-F930-689E-9654-D687DE08B059> /Applications/Bitcoin-Qt.app/Contents/PlugIns/imageformats/libqtga.dylib
+ 0x7f0c000 -  0x7f10ffb +libqtiff.dylib (0) <D9486AA9-E3DB-C1BF-A248-E5689EC8B768> /Applications/Bitcoin-Qt.app/Contents/PlugIns/imageformats/libqtiff.dylib
+ 0x7f15000 -  0x7f67fe7 +libtiff.3.dylib (13.7) <27FC7F5B-604D-360A-9D36-7567BEA4D1AD> /Applications/Bitcoin-Qt.app/Contents/Frameworks/libtiff.3.dylib
+ 0x9245000 -  0x9280ff3 +libqtaccessiblewidgets.dylib (0) <D256CDF3-59B6-AAC8-D553-A348D30AFD9C> /Applications/Bitcoin-Qt.app/Contents/PlugIns/accessible/libqtaccessiblewidgets.dylib
+0x8fedd000 - 0x8ff0fe57  dyld (210.2.3) <4D38DEED-9837-3202-B8E9-41272D01EA2C> /usr/lib/dyld
+0x90007000 - 0x90007fff  com.apple.CoreServices (57 - 57) <956C6C6D-A5DD-314F-9C57-4A61D41F30CE> /System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+0x90009000 - 0x9004bfff  libauto.dylib (185.4) <3098A75E-438E-3F18-BAAC-CD8F1CC7C2F7> /usr/lib/libauto.dylib
+0x900ea000 - 0x900f1ffb  libunwind.dylib (35.1) <E1E8D8B3-3C78-3AB1-B398-C180DC6DCF05> /usr/lib/system/libunwind.dylib
+0x900f2000 - 0x900f3fff  libsystem_sandbox.dylib (220.3) <C532F6A6-7E85-38F3-8660-EC1066DF67BE> /usr/lib/system/libsystem_sandbox.dylib
+0x900f4000 - 0x900fcfff  libcopyfile.dylib (89) <4963541B-0254-371B-B29A-B6806888949B> /usr/lib/system/libcopyfile.dylib
+0x900fd000 - 0x90107fff  libCSync.A.dylib (332) <86C5C84F-11EC-39C0-9FAC-A93FDEEC3117> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCSync.A.dylib
+0x90108000 - 0x90156ff3  com.apple.SystemConfiguration (1.12.2 - 1.12.2) <15B4EFFC-22D1-3517-BE8C-7947DAA24729> /System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+0x90157000 - 0x9015aff7  libcompiler_rt.dylib (30) <CE5DBDB4-0124-3E2B-9105-989DF98DD108> /usr/lib/system/libcompiler_rt.dylib
+0x9015b000 - 0x90186fff  com.apple.shortcut (2.2 - 2.2) <FA94F2BF-37E1-3F16-9085-7BCCB815BAE9> /System/Library/PrivateFrameworks/Shortcut.framework/Versions/A/Shortcut
+0x901c3000 - 0x902acff7  libxml2.2.dylib (22.3) <015A4FA6-5BB9-3F95-AFB8-B9281E22685B> /usr/lib/libxml2.2.dylib
+0x902ad000 - 0x90436ff7  com.apple.vImage (6.0 - 6.0) <1D1F67FE-4F75-3689-BEF6-4A46C8039E70> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+0x90437000 - 0x9046affb  com.apple.GSS (3.0 - 2.0) <9566A96D-C296-3ABD-A12A-E274C81C0B25> /System/Library/Frameworks/GSS.framework/Versions/A/GSS
+0x9046b000 - 0x905a6ff7  libBLAS.dylib (1073.4) <FF74A147-05E1-37C4-BC10-7DEB57FE5326> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+0x905a7000 - 0x905bcfff  com.apple.ImageCapture (8.0 - 8.0) <B8BD421F-D5A9-3FB4-8E89-AD5CFC0D4030> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
+0x905bd000 - 0x905bdfff  com.apple.vecLib (3.8 - vecLib 3.8) <83160DD1-5614-3E34-80EB-97041016EF1F> /System/Library/Frameworks/vecLib.framework/Versions/A/vecLib
+0x905c3000 - 0x9071cffb  com.apple.audio.toolbox.AudioToolbox (1.9 - 1.9) <8BF022FC-C38A-34AA-8469-D98294094659> /System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+0x9071d000 - 0x90721fff  com.apple.CommonPanels (1.2.5 - 94) <6B3E7E53-7708-3DA2-8C50-59C2B4735DE1> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels
+0x90722000 - 0x9072bfff  com.apple.CommerceCore (1.0 - 26.1) <8C28115C-6EC1-316D-9237-F4FBCBB778C5> /System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Frameworks/CommerceCore.framework/Versions/A/CommerceCore
+0x9072c000 - 0x90749ff7  libresolv.9.dylib (51) <B9742A2A-DF15-3F6E-8FCE-778A58214B3A> /usr/lib/libresolv.9.dylib
+0x9074a000 - 0x907c4ff7  com.apple.securityfoundation (6.0 - 55115.4) <69D92A90-971C-3CD3-BAB1-ADF958C568BC> /System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation
+0x907c5000 - 0x90809ff7  libGLU.dylib (8.9.2) <F33F6C73-7F89-3B5B-A50F-2AB57BBA314D> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+0x9080a000 - 0x90861ff3  com.apple.HIServices (1.20 - 417) <B8410ABC-E0DB-31EB-B923-17F3B65B5F4C> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+0x90862000 - 0x909b0ff3  com.apple.CFNetwork (596.4.3 - 596.4.3) <547BD138-E902-35F0-B6EC-41DD06794B22> /System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+0x909b1000 - 0x90a19fe7  libvDSP.dylib (380.6) <55780308-4DCA-3B10-9703-EAFC3E13A3FA> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+0x90a1a000 - 0x90dd2ffa  libLAPACK.dylib (1073.4) <9A6E5EAD-F2F2-3D5C-B655-2B536DB477F2> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+0x90e04000 - 0x90e08ffc  libGIF.dylib (850) <45CD8B8F-7324-3187-B01C-8E16C04F33FA> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+0x90e09000 - 0x90e4bff7  libcups.2.dylib (327.6) <D994A44F-CCDD-3D40-B732-79CB88F45908> /usr/lib/libcups.2.dylib
+0x90e4c000 - 0x90e82ffb  com.apple.DebugSymbols (98 - 98) <9A9ADA0A-E487-3C8F-9998-286EE04C235A> /System/Library/PrivateFrameworks/DebugSymbols.framework/Versions/A/DebugSymbols
+0x910ea000 - 0x910f3ffd  com.apple.audio.SoundManager (4.0 - 4.0) <ABC5FE40-B222-36EB-9905-5C8C4BFD8C87> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound
+0x91175000 - 0x91187fff  libbsm.0.dylib (32) <DADD385E-FE53-3458-94FB-E316A6345108> /usr/lib/libbsm.0.dylib
+0x91188000 - 0x911ecff7  com.apple.datadetectorscore (4.1 - 269.3) <C11C2014-298E-3E2B-9F5D-02CCD3CA4AB3> /System/Library/PrivateFrameworks/DataDetectorsCore.framework/Versions/A/DataDetectorsCore
+0x91566000 - 0x915c8fff  libc++.1.dylib (65.1) <C0CFF9FF-5D52-3EAE-B921-6AE1DA00A135> /usr/lib/libc++.1.dylib
+0x915c9000 - 0x915eeffb  com.apple.framework.familycontrols (4.1 - 410) <B1755756-BEA2-3205-ADAA-68FCC32E60BD> /System/Library/PrivateFrameworks/FamilyControls.framework/Versions/A/FamilyControls
+0x915ef000 - 0x915efffd  com.apple.audio.units.AudioUnit (1.9 - 1.9) <F7638E43-F885-372E-9DAE-24D0C21AA66E> /System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit
+0x915f0000 - 0x915f0ffd  libOpenScriptingUtil.dylib (148.3) <87895E27-88E2-3249-8D0E-B17E76FB00C1> /usr/lib/libOpenScriptingUtil.dylib
+0x915f1000 - 0x9164bffb  com.apple.AE (645.6 - 645.6) <44556FF7-A869-399A-AEBB-F4E9263D9152> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+0x9164c000 - 0x91656ffe  com.apple.bsd.ServiceManagement (2.0 - 2.0) <9732BA61-D6F6-3644-82DA-FF0D6FEEFC69> /System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement
+0x91657000 - 0x916eeff7  com.apple.ink.framework (10.8.2 - 150) <A9C3B735-7D5F-3D7D-AA70-2CC852D09CDE> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
+0x916ef000 - 0x916fdff3  libsystem_network.dylib (77.10) <7FBF5A15-97BA-3721-943E-E77F0C40DBE1> /usr/lib/system/libsystem_network.dylib
+0x916fe000 - 0x91700ffd  libCVMSPluginSupport.dylib (8.9.2) <D6D0BB75-42DA-3772-AB5E-CBD59B343393> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCVMSPluginSupport.dylib
+0x91701000 - 0x91713ff7  libdispatch.dylib (228.23) <86EF7D45-2D97-3465-A449-95038AE5DABA> /usr/lib/system/libdispatch.dylib
+0x91715000 - 0x917adfff  com.apple.CoreServices.OSServices (557.6 - 557.6) <8DEEED08-A4B3-3B08-8C2A-BDDBF005B43F> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+0x917ae000 - 0x917c4fff  com.apple.CFOpenDirectory (10.8 - 151.10) <D90DB5D4-6565-3726-B88A-21336CBE9170> /System/Library/Frameworks/OpenDirectory.framework/Versions/A/Frameworks/CFOpenDirectory.framework/Versions/A/CFOpenDirectory
+0x917ce000 - 0x91c10fff  com.apple.CoreGraphics (1.600.0 - 332) <67E70F21-A0F1-356F-90B7-4B90C468EE2C> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+0x91d06000 - 0x91d06fff  libsystem_blocks.dylib (59) <3A743C5D-CFA5-37D8-80A8-B6795A9DB04F> /usr/lib/system/libsystem_blocks.dylib
+0x91d07000 - 0x91d08fff  libDiagnosticMessagesClient.dylib (8) <39B3D25A-148A-3936-B800-0D393A00E64F> /usr/lib/libDiagnosticMessagesClient.dylib
+0x91d09000 - 0x91d60ff7  com.apple.ScalableUserInterface (1.0 - 1) <2B5E454B-BC49-3E85-B54D-1950397C448C> /System/Library/Frameworks/QuartzCore.framework/Versions/A/Frameworks/ScalableUserInterface.framework/Versions/A/ScalableUserInterface
+0x91d61000 - 0x91e6cff7  libJP2.dylib (850) <3FFCEFA6-317A-34AF-8D99-AEBB017543C5> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib
+0x91eab000 - 0x91fc7ffb  com.apple.desktopservices (1.7.4 - 1.7.4) <782D711D-7930-324A-9015-686C2F86DBA3> /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
+0x91fca000 - 0x91fcbfff  liblangid.dylib (116) <E13CC8C5-5034-320A-A210-41A2BDE4F846> /usr/lib/liblangid.dylib
+0x91fd7000 - 0x91fe0ff9  com.apple.CommonAuth (3.0 - 2.0) <34C4768C-EF8D-3DBA-AFB7-09148C8672DB> /System/Library/PrivateFrameworks/CommonAuth.framework/Versions/A/CommonAuth
+0x91fe1000 - 0x91fe2ffd  libunc.dylib (25) <58599CBF-E262-3CEA-AFE1-35560E0177DC> /usr/lib/system/libunc.dylib
+0x91fe3000 - 0x91fe9fff  com.apple.print.framework.Print (8.0 - 258) <12AEAD24-6924-3923-9E4A-C5D21231E639> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
+0x91fea000 - 0x9201aff3  libtidy.A.dylib (15.10) <F2F4E000-E305-3089-91E6-3DB0ED07E74A> /usr/lib/libtidy.A.dylib
+0x9201b000 - 0x92081fff  com.apple.print.framework.PrintCore (8.3 - 387.2) <0F7665F5-33F0-3661-9BE2-7DD2890E304B> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+0x92082000 - 0x92114ffb  libvMisc.dylib (380.6) <6DA3A03F-20BE-300D-A664-B50A7B4E4B1A> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+0x927c9000 - 0x92864fff  com.apple.CoreSymbolication (3.0 - 117) <2BBBE224-301D-3931-AEF2-DD967A6E9172> /System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication
+0x92865000 - 0x92884ff3  com.apple.Ubiquity (1.2 - 243.15) <E10A2937-D671-3D14-AF8D-BA25E601F458> /System/Library/PrivateFrameworks/Ubiquity.framework/Versions/A/Ubiquity
+0x92885000 - 0x9289fffc  libsystem_kernel.dylib (2050.24.15) <9E58DCC0-D5FF-37E1-AA7F-F2206719E138> /usr/lib/system/libsystem_kernel.dylib
+0x92921000 - 0x9292eff7  com.apple.AppleFSCompression (49 - 1.0) <166AA1F8-E50A-3533-A3B5-8737C5118CC3> /System/Library/PrivateFrameworks/AppleFSCompression.framework/Versions/A/AppleFSCompression
+0x9292f000 - 0x92932ff9  libCGXType.A.dylib (332) <07B59FCC-6229-37C2-9870-70A18E2C5598> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libCGXType.A.dylib
+0x92933000 - 0x9294cfff  com.apple.Kerberos (2.0 - 1) <9BDE8F4D-DBC3-34D1-852C-898D3655A611> /System/Library/Frameworks/Kerberos.framework/Versions/A/Kerberos
+0x9294d000 - 0x92951fff  com.apple.OpenDirectory (10.8 - 151.10) <B9244697-CB05-3BD3-80A7-D188B3747B03> /System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory
+0x92952000 - 0x929acfff  com.apple.Symbolication (1.3 - 93) <2C7B4F90-8834-3BCB-81BF-001B31452FB6> /System/Library/PrivateFrameworks/Symbolication.framework/Versions/A/Symbolication
+0x929ad000 - 0x92a1cffb  com.apple.Heimdal (3.0 - 2.0) <964D9952-B0F2-34F6-8265-1823C0D5EAB8> /System/Library/PrivateFrameworks/Heimdal.framework/Versions/A/Heimdal
+0x92c15000 - 0x92eb8ff3  com.apple.CoreImage (8.4.0 - 1.0.1) <C25B9EEC-4824-3088-BC08-2EA516C0728C> /System/Library/Frameworks/QuartzCore.framework/Versions/A/Frameworks/CoreImage.framework/Versions/A/CoreImage
+0x92eca000 - 0x92f4fff7  com.apple.SearchKit (1.4.0 - 1.4.0) <454E950F-291C-3E95-8F35-05CA0AD6B327> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+0x92f50000 - 0x92f9fff6  libTIFF.dylib (850) <78E121A6-92A2-3120-883C-7AA3C2966F9C> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+0x93082000 - 0x9308cfff  libsystem_notify.dylib (98.5) <7EEE9475-18F8-3099-B0ED-23A3E528ABE0> /usr/lib/system/libsystem_notify.dylib
+0x9308d000 - 0x93093fff  libGFXShared.dylib (8.9.2) <F3B0E66D-5C47-3A5A-A2CD-F0C58E8322C3> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGFXShared.dylib
+0x93094000 - 0x93097ffc  libpam.2.dylib (20) <FCF74195-A99E-3B07-8E49-688D4A6F1E18> /usr/lib/libpam.2.dylib
+0x93098000 - 0x9309ffff  libsystem_dnssd.dylib (379.38.1) <4F164CA8-4A4F-3B27-B88A-0926E2FEB7D4> /usr/lib/system/libsystem_dnssd.dylib
+0x930a0000 - 0x930acffe  libkxld.dylib (2050.24.15) <BEC097B0-9D9A-3484-99DB-0F537E71963E> /usr/lib/system/libkxld.dylib
+0x930ad000 - 0x934cafff  FaceCoreLight (2.4.1) <B12C8721-EFB3-30A2-9A1B-ABCDF5670764> /System/Library/PrivateFrameworks/FaceCoreLight.framework/Versions/A/FaceCoreLight
+0x93d49000 - 0x93d49fff  com.apple.Accelerate (1.8 - Accelerate 1.8) <4EC0548E-3A3F-310D-A366-47B51D5B6398> /System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+0x93d4a000 - 0x93d4afff  com.apple.ApplicationServices (45 - 45) <677C4ACC-9D12-366F-8A87-B898AC806DD9> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+0x93d71000 - 0x93dedff3  com.apple.Metadata (10.7.0 - 707.11) <F9BB5BBE-69D0-3309-8280-2303EB1DC455> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+0x93dee000 - 0x93df5fff  liblaunch.dylib (442.26.2) <310C99F8-0811-314D-9BB9-D0ED6DFA024B> /usr/lib/system/liblaunch.dylib
+0x93df6000 - 0x93e57fff  com.apple.audio.CoreAudio (4.1.1 - 4.1.1) <A3B911DB-77DF-3037-A47A-634B08E5727D> /System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+0x93e58000 - 0x93e75fff  libCRFSuite.dylib (33) <C9D72D0C-871A-39A2-8AFB-682D11AE7D0D> /usr/lib/libCRFSuite.dylib
+0x93e76000 - 0x93e76fff  com.apple.Carbon (154 - 155) <17F1B675-E054-3D2C-900B-C9CE69F1FC31> /System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+0x93e77000 - 0x93e9bfff  libJPEG.dylib (850) <36FEAB05-86C5-33B9-9DE9-5FAD8AEBA15F> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+0x94529000 - 0x945e7ff3  com.apple.ColorSync (4.8.0 - 4.8.0) <EFEDCB37-4F20-3CEC-A185-5D2976E11BAC> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSync.framework/Versions/A/ColorSync
+0x945e8000 - 0x945f6ff7  libz.1.dylib (43) <245F1B61-2276-3BBB-9891-99934116D833> /usr/lib/libz.1.dylib
+0x9470b000 - 0x9470fff7  libmacho.dylib (829) <5280A013-4F74-3F74-BE0C-7F612C49F1DC> /usr/lib/system/libmacho.dylib
+0x94844000 - 0x94847ff7  com.apple.TCC (1.0 - 1) <437D76CD-6437-3B55-BE2C-A53508858256> /System/Library/PrivateFrameworks/TCC.framework/Versions/A/TCC
+0x94848000 - 0x94896ffb  libFontRegistry.dylib (100) <3B8350C2-4D8F-38C4-A22E-2F855D7E83D1> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontRegistry.dylib
+0x948fe000 - 0x94900fff  com.apple.securityhi (4.0 - 55002) <027D2D24-4043-3B43-90F3-112FB46903E8> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
+0x94908000 - 0x94918ff2  com.apple.LangAnalysis (1.7.0 - 1.7.0) <875363E7-6D02-3229-A9DD-E5A5568A7D61> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
+0x949b2000 - 0x94b6effd  libicucore.A.dylib (491.11.3) <FF55E176-7D66-3DBB-AF86-84744C47A02C> /usr/lib/libicucore.A.dylib
+0x94b6f000 - 0x94b6ffff  com.apple.Accelerate.vecLib (3.8 - vecLib 3.8) <908B8D40-3FB5-3047-B482-3DF95025ECFC> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+0x94bbc000 - 0x94bfeffb  com.apple.RemoteViewServices (2.0 - 80.6) <AE962502-4539-3893-A2EB-9D384652AEAC> /System/Library/PrivateFrameworks/RemoteViewServices.framework/Versions/A/RemoteViewServices
+0x94c0e000 - 0x94eceff3  com.apple.security (7.0 - 55179.13) <000FD8E9-D070-326A-B386-51314360FD5C> /System/Library/Frameworks/Security.framework/Versions/A/Security
+0x94ed9000 - 0x94f8dfff  com.apple.coreui (2.0 - 181.1) <C15ABF35-B7F5-34ED-A461-386DAF65D96B> /System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI
+0x94f8e000 - 0x94f97fff  com.apple.DiskArbitration (2.5.2 - 2.5.2) <89822A83-B450-3363-8E9C-9B80CB4450B1> /System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+0x94f98000 - 0x94fb6ff3  com.apple.openscripting (1.3.6 - 148.3) <F3422C02-5ACB-343A-987B-A2D58EA2F5A8> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting
+0x95014000 - 0x95112ff7  libFontParser.dylib (84.6) <7D3EB3CC-527E-3A74-816A-59CAFD2260A4> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontParser.dylib
+0x95113000 - 0x95115fff  libdyld.dylib (210.2.3) <05D6FF2A-F09B-309D-95F7-7AF10259C707> /usr/lib/system/libdyld.dylib
+0x95227000 - 0x95334057  libobjc.A.dylib (532.2) <FA455371-7395-3D58-A89B-D1520612D1BC> /usr/lib/libobjc.A.dylib
+0x95335000 - 0x95342ff7  com.apple.HelpData (2.1.4 - 85) <1E180AEF-53FF-3D8B-9513-7FCA1B25A4AB> /System/Library/PrivateFrameworks/HelpData.framework/Versions/A/HelpData
+0x95343000 - 0x95450ff3  com.apple.ImageIO.framework (3.2.1 - 850) <C964E877-660E-3482-ACF9-EC25DFEAF307> /System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO
+0x95451000 - 0x95473fff  libc++abi.dylib (26) <3AAA8D55-F5F6-362B-BA3C-CCAF0D3C8E27> /usr/lib/libc++abi.dylib
+0x95474000 - 0x954dcff7  com.apple.framework.IOKit (2.0.1 - 755.24.1) <70DE925B-51E8-3C65-8928-FB49FD823D94> /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+0x954dd000 - 0x954dfffb  libRadiance.dylib (850) <83434287-A09E-3A3F-A1AC-085B563BA46D> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+0x954f8000 - 0x95504ff7  com.apple.NetAuth (4.0 - 4.0) <4983C4B8-9D95-3C4D-897E-07743326487E> /System/Library/PrivateFrameworks/NetAuth.framework/Versions/A/NetAuth
+0x95531000 - 0x9554dfff  libPng.dylib (850) <26AD967A-D55E-3C5A-A643-D9953136DE58> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+0x9554e000 - 0x9557aff7  libsystem_info.dylib (406.17) <AA5611DB-A944-3072-B6BE-ACAB08689547> /usr/lib/system/libsystem_info.dylib
+0x9557b000 - 0x955acfff  com.apple.DictionaryServices (1.2 - 184.4) <A31BB2CE-6965-3610-8B11-EA26EC6D7EEA> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+0x9570b000 - 0x95722fff  com.apple.GenerationalStorage (1.1 - 132.3) <DD0AA3DB-376D-37F3-AC5B-17AC9B9E0A63> /System/Library/PrivateFrameworks/GenerationalStorage.framework/Versions/A/GenerationalStorage
+0x9577b000 - 0x95782ff3  com.apple.NetFS (5.0 - 4.0) <1F7041F2-4E97-368C-8F5D-24153D81BBDB> /System/Library/Frameworks/NetFS.framework/Versions/A/NetFS
+0x95783000 - 0x95784fff  libdnsinfo.dylib (453.19) <3B523729-84A8-3D0B-B58C-3FC185060E67> /usr/lib/system/libdnsinfo.dylib
+0x95a9d000 - 0x95ac6fff  libxslt.1.dylib (11.3) <0DE17DAA-66FF-3195-AADB-347BEB5E2EFA> /usr/lib/libxslt.1.dylib
+0x96b93000 - 0x96c84ffc  libiconv.2.dylib (34) <B096A9B7-83A6-31B3-8D2F-87D91910BF4C> /usr/lib/libiconv.2.dylib
+0x9769f000 - 0x976a2ffc  libCoreVMClient.dylib (32.3) <35B63A60-DF0A-3FB3-ABB8-164B246A43CC> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib
+0x976a3000 - 0x976a4ffd  com.apple.TrustEvaluationAgent (2.0 - 23) <E42347C0-2D3C-36A4-9200-757FFA61B388> /System/Library/PrivateFrameworks/TrustEvaluationAgent.framework/Versions/A/TrustEvaluationAgent
+0x976a5000 - 0x976c5ffd  com.apple.ChunkingLibrary (2.0 - 133.3) <FA45EAE8-BB10-3AEE-9FDC-C0C3A533FF48> /System/Library/PrivateFrameworks/ChunkingLibrary.framework/Versions/A/ChunkingLibrary
+0x97720000 - 0x9772ffff  libGL.dylib (8.9.2) <1082B9A5-9AA3-35D4-968B-3A3FE15B1ED7> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+0x97771000 - 0x97775fff  com.apple.IOSurface (86.0.4 - 86.0.4) <6431ACB6-561B-314F-9A2A-FAC1578FCC86> /System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface
+0x97776000 - 0x9784aff3  com.apple.backup.framework (1.4.3 - 1.4.3) <6EA22ED3-BA18-3A37-AE05-5D6FDA3F372F> /System/Library/PrivateFrameworks/Backup.framework/Versions/A/Backup
+0x97865000 - 0x978daff7  com.apple.ApplicationServices.ATS (332 - 341.1) <BEE998BC-E4A5-3BA0-A6B5-31A1DFA1522C> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+0x97ba3000 - 0x97c52ff7  com.apple.CoreText (260.0 - 275.16) <873ADCD9-D361-3753-A220-CDD289196AD8> /System/Library/Frameworks/CoreText.framework/Versions/A/CoreText
+0x97c53000 - 0x97c8efef  libGLImage.dylib (8.9.2) <9D41F71E-E927-3767-A856-55480E20E9D9> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+0x97c8f000 - 0x97cd7ff5  com.apple.opencl (2.2.19 - 2.2.19) <968DD067-49D0-3B71-A96B-B3579698D992> /System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL
+0x97dd6000 - 0x97dd7fff  libquarantine.dylib (52.1) <094A1501-373E-3397-B632-8F7C5AC8EFD5> /usr/lib/system/libquarantine.dylib
+0x97dd8000 - 0x97e01ff7  libRIP.A.dylib (332) <521E60A6-A768-3CB8-B10D-D10EECD68A94> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/CoreGraphics.framework/Versions/A/Resources/libRIP.A.dylib
+0x97eb4000 - 0x97f5efff  com.apple.LaunchServices (539.9 - 539.9) <C0E0CFFF-3714-3467-87DA-4A6F0AF1953B> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+0x97f5f000 - 0x97f8cffb  com.apple.CoreServicesInternal (154.3 - 154.3) <A452602B-67CB-39C4-95EB-E59433C65774> /System/Library/PrivateFrameworks/CoreServicesInternal.framework/Versions/A/CoreServicesInternal
+0x97f8f000 - 0x98294ff7  com.apple.CoreServices.CarbonCore (1037.6 - 1037.6) <4DB4B0C9-1377-3062-BE0E-CD3326ACDAF0> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+0x98295000 - 0x9847dffb  com.apple.CoreFoundation (6.8 - 744.19) <DDD3AA21-5B5F-3D8F-B137-AD95FCA89064> /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+0x9847e000 - 0x9848affa  com.apple.CrashReporterSupport (10.8.3 - 418) <03BC564E-35FE-384E-87D6-6E0C55DF16E3> /System/Library/PrivateFrameworks/CrashReporterSupport.framework/Versions/A/CrashReporterSupport
+0x9848b000 - 0x9848bfff  libkeymgr.dylib (25) <D5E93F7F-9315-3AD6-92C7-941F7B54C490> /usr/lib/system/libkeymgr.dylib
+0x9848c000 - 0x99048ff3  com.apple.AppKit (6.8 - 1187.39) <ACA24416-D910-39B8-9387-52A6C6A561F8> /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+0x99049000 - 0x99049fff  libSystem.B.dylib (169.3) <D7C4320E-C2EA-3A09-A413-D1F78382050D> /usr/lib/libSystem.B.dylib
+0x9907a000 - 0x99291fff  com.apple.CoreData (106.1 - 407.7) <EC4B8297-8E01-3778-A8A4-E8747F91109D> /System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+0x99292000 - 0x992affff  libxpc.dylib (140.43) <C628073D-51A0-3541-A665-1121520508C6> /usr/lib/system/libxpc.dylib
+0x9950a000 - 0x9950dfff  com.apple.help (1.3.2 - 42) <AD7EB1F0-A068-3A2C-9D59-38E59CEC0D96> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
+0x9950e000 - 0x995cbfeb  libsystem_c.dylib (825.26) <6E35A83F-1A5B-3AF9-8C6D-D7B57B25FB63> /usr/lib/system/libsystem_c.dylib
+0x995cc000 - 0x998ecff3  com.apple.Foundation (6.8 - 945.18) <BDC56A93-45C5-3459-B307-65A1CCE702C5> /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+0x998ed000 - 0x99900ff9  com.apple.MultitouchSupport.framework (235.29 - 235.29) <451701B6-03CE-3F26-9FF0-92D8DA1467EE> /System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport
+0x99901000 - 0x99946ff7  com.apple.NavigationServices (3.7 - 200) <F6531764-6E43-3AF3-ACDD-8A5551EF016A> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices
+0x99947000 - 0x9995cfff  com.apple.speech.synthesis.framework (4.1.12 - 4.1.12) <DE68CEB5-4959-3652-83B8-D2B00D3B932D> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+0x9995d000 - 0x99981fff  com.apple.PerformanceAnalysis (1.16 - 16) <1F963AEF-27CF-3FEB-BE9C-4C15AFE56DEA> /System/Library/PrivateFrameworks/PerformanceAnalysis.framework/Versions/A/PerformanceAnalysis
+0x99982000 - 0x999ddfff  com.apple.htmlrendering (77 - 1.1.4) <5C0C669F-AE07-3983-B38F-EB829B5CE609> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering
+0x999de000 - 0x99a03ff7  com.apple.CoreVideo (1.8 - 99.4) <A26DE896-32E0-3D5E-BA89-02AD23FA96B3> /System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo
+0x99a04000 - 0x99aa4ff7  com.apple.QD (3.42.1 - 285.1) <BAAC13D2-1312-33C0-A255-FAB1D314C324> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+0x99aa5000 - 0x99ad2ffe  libsystem_m.dylib (3022.6) <9975D9C3-3B71-38E3-AA21-C5C5F9D9C431> /usr/lib/system/libsystem_m.dylib
+0x99b8f000 - 0x99b90fff  libremovefile.dylib (23.2) <9813B2DB-2374-3AA2-99B6-AA2E9897B249> /usr/lib/system/libremovefile.dylib
+0x99b91000 - 0x99c89ff9  libsqlite3.dylib (138.1) <AD7C5914-35F0-37A3-9238-A29D2E26C755> /usr/lib/libsqlite3.dylib
+0x99c8a000 - 0x99cd6fff  libcorecrypto.dylib (106.2) <20EBADBA-D6D6-36F0-AE80-168E9AF13DB6> /usr/lib/system/libcorecrypto.dylib
+0x99d8f000 - 0x99d93ffe  libcache.dylib (57) <834FDCA7-FE3B-33CC-A12A-E11E202477EC> /usr/lib/system/libcache.dylib
+0x99d94000 - 0x99f0cff5  com.apple.QuartzCore (1.8 - 304.3) <F2EFC117-CDC6-3252-A4A8-880965764385> /System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+0x99f0d000 - 0x99f4cff7  com.apple.bom (12.0 - 192) <0637E52C-D151-37B3-904F-8656B2FD44DD> /System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom
+0x99f4d000 - 0x99f59ff8  libbz2.1.0.dylib (29) <7031A4C0-784A-3EAA-93DF-EA1F26CC9264> /usr/lib/libbz2.1.0.dylib
+0x99f5a000 - 0x99fbeff3  libstdc++.6.dylib (56) <F8FA490A-8F3C-3645-ABF5-78926CE9C62C> /usr/lib/libstdc++.6.dylib
+0x9a22d000 - 0x9a23bfff  com.apple.opengl (1.8.9 - 1.8.9) <1872D2CD-00A8-30D1-8ECC-B663F4E4C530> /System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+0x9a23c000 - 0x9a24afff  libxar.1.dylib (105) <343E4A3B-1D04-34A3-94C2-8C7C9A8F736B> /usr/lib/libxar.1.dylib
+0x9a28e000 - 0x9a298fff  com.apple.speech.recognition.framework (4.1.5 - 4.1.5) <B855E8B4-2EE3-3BFF-8547-98A0F084F9AF> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+0x9a29f000 - 0x9a2aafff  libcommonCrypto.dylib (60027) <8EE30FA5-AA8D-3FA6-AB0F-05DA8B0425D9> /usr/lib/system/libcommonCrypto.dylib
+0x9a2ab000 - 0x9a68efff  com.apple.HIToolbox (2.0 - 626.1) <ECC3F04F-C4B7-35BF-B10E-183B749DAB92> /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+
+External Modification Summary:
+  Calls made by other processes targeting this process:
+    task_for_pid: 2
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by all processes on this machine:
+    task_for_pid: 2306
+    thread_create: 0
+    thread_set_state: 0
+
+VM Region Summary:
+ReadOnly portion of Libraries: Total=145.3M resident=111.1M(76%) swapped_out_or_unallocated=34.2M(24%)
+Writable regions: Total=102.6M written=47.2M(46%) resident=59.0M(57%) swapped_out=0K(0%) unallocated=43.6M(43%)
+ 
+REGION TYPE                      VIRTUAL
+===========                      =======
+CG backing stores                  3984K
+CG image                             28K
+CG raster data                       80K
+CG shared images                   1216K
+CoreServices                       2068K
+MALLOC                             65.2M
+MALLOC guard page                    48K
+Memory tag=240                        4K
+Memory tag=242                       12K
+Memory tag=35                      6312K
+Stack                              71.7M
+VM_ALLOCATE                        16.1M
+__DATA                             6840K
+__DATA/__OBJC                       152K
+__IMAGE                             528K
+__LINKEDIT                         36.5M
+__OBJC                             1572K
+__OBJC/__DATA                        24K
+__PAGEZERO                            4K
+__TEXT                            108.8M
+__UNICODE                           544K
+mapped file                       162.0M
+shared memory                       308K
+===========                      =======
+TOTAL                             483.4M
+

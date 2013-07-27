@@ -1,0 +1,29 @@
+Process:         ScryptMiner GUI [424]
+Path:            /Applications/Scrypt Miner GUI - OSX/ScryptMiner GUI.app/Contents/MacOS/ScryptMiner GUI
+Identifier:      com.yourcompany.ScryptMiner GUI
+Version:         ???
+Code Type:       X86-64 (Native)
+Parent Process:  launchd [209]
+User ID:         501
+
+Date/Time:       2013-07-26 16:54:22.160 +0200
+OS Version:      Mac OS X 10.8.4 (12E55)
+Report Version:  10
+
+Crashed Thread:  0
+
+Exception Type:  EXC_BREAKPOINT (SIGTRAP)
+Exception Codes: 0x0000000000000002, 0x0000000000000000
+
+Application Specific Information:
+dyld: launch, loading dependent libraries
+
+Dyld Error Message:
+  Library not loaded: /Users/*/QtGui.framework/Versions/4/QtGui
+  Referenced from: /Applications/Scrypt Miner GUI - OSX/ScryptMiner GUI.app/Contents/MacOS/ScryptMiner GUI
+  Reason: image not found
+
+Binary Images:
+       0x100000000 -        0x100036fff +com.yourcompany.ScryptMiner GUI (???) <5F2258C1-7FB3-3209-9F53-3903132F9C36> /Applications/Scrypt Miner GUI - OSX/ScryptMiner GUI.app/Contents/MacOS/ScryptMiner GUI
+    0x7fff69ea2000 -     0x7fff69ed693f  dyld (210.2.3) <6900F2BA-DB48-3B78-B668-58FC0CF6BCB8> /usr/lib/dyld
+

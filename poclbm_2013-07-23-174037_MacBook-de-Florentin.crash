@@ -1,0 +1,256 @@
+Process:         poclbm [290]
+Path:            /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/MacOS/poclbm
+Identifier:      poclbm
+Version:         0.0.0 (0.0.0)
+Code Type:       X86-64 (Native)
+Parent Process:  guiminer [243]
+User ID:         501
+
+Date/Time:       2013-07-23 17:40:33.208 +0200
+OS Version:      Mac OS X 10.8.4 (12E55)
+Report Version:  10
+
+Interval Since Last Report:          69 sec
+Crashes Since Last Report:           2
+Per-App Crashes Since Last Report:   1
+Anonymous UUID:                      E410036A-2F75-E63F-560C-755FB9A914FD
+
+Crashed Thread:  0  Dispatch queue: com.apple.main-thread
+
+Exception Type:  EXC_BAD_ACCESS (SIGSEGV)
+Exception Codes: EXC_I386_GPFLT
+
+Thread 0 Crashed:: Dispatch queue: com.apple.main-thread
+0   org.python.python             	0x0000000101ce08c8 PyString_AsString + 8
+1   org.python.python             	0x0000000101d2eec9 _Py_Mangle + 25
+2   org.python.python             	0x0000000101d4db65 0x101c89000 + 805733
+3   org.python.python             	0x0000000101d4f6ef 0x101c89000 + 812783
+4   org.python.python             	0x0000000101d4f630 0x101c89000 + 812592
+5   org.python.python             	0x0000000101d4f170 0x101c89000 + 811376
+6   org.python.python             	0x0000000101d4ff98 0x101c89000 + 815000
+7   org.python.python             	0x0000000101d4ffd0 0x101c89000 + 815056
+8   org.python.python             	0x0000000101d4fa80 0x101c89000 + 813696
+9   org.python.python             	0x0000000101d4fc40 0x101c89000 + 814144
+10  org.python.python             	0x0000000101d507c0 PySymtable_Build + 448
+11  org.python.python             	0x0000000101d357f5 PyAST_Compile + 197
+12  org.python.python             	0x0000000101d4abe3 PyRun_StringFlags + 99
+13  org.python.python             	0x0000000101d25d33 PyEval_EvalFrameEx + 3603
+14  org.python.python             	0x0000000101d2c7d7 PyEval_EvalCodeEx + 2103
+15  org.python.python             	0x0000000101d2c856 PyEval_EvalCode + 54
+16  org.python.python             	0x0000000101d3f933 PyImport_ExecCodeModuleEx + 243
+17  org.python.python             	0x0000000101d3ff53 0x101c89000 + 749395
+18  org.python.python             	0x0000000101d40db6 0x101c89000 + 753078
+19  org.python.python             	0x0000000101d40fbb 0x101c89000 + 753595
+20  org.python.python             	0x0000000101d41dfd PyImport_ImportModuleLevel + 1165
+21  org.python.python             	0x0000000101d1f974 0x101c89000 + 616820
+22  org.python.python             	0x0000000101c91ec1 PyObject_Call + 97
+23  org.python.python             	0x0000000101d24324 PyEval_CallObjectWithKeywords + 180
+24  org.python.python             	0x0000000101d2b246 PyEval_EvalFrameEx + 25382
+25  org.python.python             	0x0000000101d2c7d7 PyEval_EvalCodeEx + 2103
+26  org.python.python             	0x0000000101d2c856 PyEval_EvalCode + 54
+27  org.python.python             	0x0000000101d3f933 PyImport_ExecCodeModuleEx + 243
+28  org.python.python             	0x0000000101d3ff53 0x101c89000 + 749395
+29  org.python.python             	0x0000000101d408e3 0x101c89000 + 751843
+30  org.python.python             	0x0000000101d40db6 0x101c89000 + 753078
+31  org.python.python             	0x0000000101d40fbb 0x101c89000 + 753595
+32  org.python.python             	0x0000000101d41dfd PyImport_ImportModuleLevel + 1165
+33  org.python.python             	0x0000000101d1f974 0x101c89000 + 616820
+34  org.python.python             	0x0000000101c91ec1 PyObject_Call + 97
+35  org.python.python             	0x0000000101d24324 PyEval_CallObjectWithKeywords + 180
+36  org.python.python             	0x0000000101d2b246 PyEval_EvalFrameEx + 25382
+37  org.python.python             	0x0000000101d2c7d7 PyEval_EvalCodeEx + 2103
+38  org.python.python             	0x0000000101d2c856 PyEval_EvalCode + 54
+39  org.python.python             	0x0000000101d3f933 PyImport_ExecCodeModuleEx + 243
+40  org.python.python             	0x0000000101d3ff53 0x101c89000 + 749395
+41  org.python.python             	0x0000000101d408e3 0x101c89000 + 751843
+42  org.python.python             	0x0000000101d40db6 0x101c89000 + 753078
+43  org.python.python             	0x0000000101d40fbb 0x101c89000 + 753595
+44  org.python.python             	0x0000000101d41dfd PyImport_ImportModuleLevel + 1165
+45  org.python.python             	0x0000000101d1f974 0x101c89000 + 616820
+46  org.python.python             	0x0000000101c91ec1 PyObject_Call + 97
+47  org.python.python             	0x0000000101d24324 PyEval_CallObjectWithKeywords + 180
+48  org.python.python             	0x0000000101d2b246 PyEval_EvalFrameEx + 25382
+49  org.python.python             	0x0000000101d2c7d7 PyEval_EvalCodeEx + 2103
+50  org.python.python             	0x0000000101d2c856 PyEval_EvalCode + 54
+51  org.python.python             	0x0000000101d3f933 PyImport_ExecCodeModuleEx + 243
+52  org.python.python             	0x0000000101d72f2c 0x101c89000 + 958252
+53  org.python.python             	0x0000000101c91ec1 PyObject_Call + 97
+54  org.python.python             	0x0000000101c926a2 0x101c89000 + 38562
+55  org.python.python             	0x0000000101c92a28 PyObject_CallMethod + 296
+56  org.python.python             	0x0000000101d4072c 0x101c89000 + 751404
+57  org.python.python             	0x0000000101d40db6 0x101c89000 + 753078
+58  org.python.python             	0x0000000101d40fbb 0x101c89000 + 753595
+59  org.python.python             	0x0000000101d41dfd PyImport_ImportModuleLevel + 1165
+60  org.python.python             	0x0000000101d1f974 0x101c89000 + 616820
+61  org.python.python             	0x0000000101c91ec1 PyObject_Call + 97
+62  org.python.python             	0x0000000101d24324 PyEval_CallObjectWithKeywords + 180
+63  org.python.python             	0x0000000101d2b246 PyEval_EvalFrameEx + 25382
+64  org.python.python             	0x0000000101d2c7d7 PyEval_EvalCodeEx + 2103
+65  org.python.python             	0x0000000101d2c856 PyEval_EvalCode + 54
+66  org.python.python             	0x0000000101d3f933 PyImport_ExecCodeModuleEx + 243
+67  org.python.python             	0x0000000101d72f2c 0x101c89000 + 958252
+68  org.python.python             	0x0000000101c91ec1 PyObject_Call + 97
+69  org.python.python             	0x0000000101c926a2 0x101c89000 + 38562
+70  org.python.python             	0x0000000101c92a28 PyObject_CallMethod + 296
+71  org.python.python             	0x0000000101d4072c 0x101c89000 + 751404
+72  org.python.python             	0x0000000101d40db6 0x101c89000 + 753078
+73  org.python.python             	0x0000000101d40fbb 0x101c89000 + 753595
+74  org.python.python             	0x0000000101d41dfd PyImport_ImportModuleLevel + 1165
+75  org.python.python             	0x0000000101d1f974 0x101c89000 + 616820
+76  org.python.python             	0x0000000101c91ec1 PyObject_Call + 97
+77  org.python.python             	0x0000000101d24324 PyEval_CallObjectWithKeywords + 180
+78  org.python.python             	0x0000000101d2b246 PyEval_EvalFrameEx + 25382
+79  org.python.python             	0x0000000101d2c7d7 PyEval_EvalCodeEx + 2103
+80  org.python.python             	0x0000000101d2c856 PyEval_EvalCode + 54
+81  org.python.python             	0x0000000101d4aae4 PyRun_FileExFlags + 164
+82  org.python.python             	0x0000000101d20706 0x101c89000 + 620294
+83  org.python.python             	0x0000000101d2957b PyEval_EvalFrameEx + 18011
+84  org.python.python             	0x0000000101d2c7d7 PyEval_EvalCodeEx + 2103
+85  org.python.python             	0x0000000101d2c988 0x101c89000 + 670088
+86  org.python.python             	0x0000000101d2962d PyEval_EvalFrameEx + 18189
+87  org.python.python             	0x0000000101d2c7d7 PyEval_EvalCodeEx + 2103
+88  org.python.python             	0x0000000101d2c856 PyEval_EvalCode + 54
+89  org.python.python             	0x0000000101d4aae4 PyRun_FileExFlags + 164
+90  org.python.python             	0x0000000101d4bd68 PyRun_SimpleFileExFlags + 392
+91  org.pythonmac.unspecified.poclbm	0x0000000100004390 start + 13328
+92  org.pythonmac.unspecified.poclbm	0x00000001000049c8 main + 1496
+93  org.pythonmac.unspecified.poclbm	0x0000000100000fb4 start + 52
+
+Thread 1:: Dispatch queue: com.apple.libdispatch-manager
+0   libsystem_kernel.dylib        	0x000000010023ad16 kevent + 10
+1   libdispatch.dylib             	0x0000000100054dea _dispatch_mgr_invoke + 883
+2   libdispatch.dylib             	0x00000001000549ee _dispatch_mgr_thread + 54
+
+Thread 0 crashed with X86 Thread State (64-bit):
+  rax: 0x0000000000000008  rbx: 0xde000001018bb6c0  rcx: 0x0000000101d4f76c  rdx: 0x0000000000000008
+  rdi: 0xde000001018bb6c0  rsi: 0xde000001018bb6c0  rbp: 0x00007fff5fbf7070  rsp: 0x00007fff5fbf7060
+   r8: 0x0000000000000001   r9: 0x0000000000000000  r10: 0x00000001007b7490  r11: 0x0000000000000001
+  r12: 0x0000000000000000  r13: 0x0000000100967624  r14: 0x00000001029ab720  r15: 0x00000001007cf150
+  rip: 0x0000000101ce08c8  rfl: 0x0000000000010206  cr2: 0x0000000100978000
+Logical CPU: 0
+
+Binary Images:
+       0x100000000 -        0x100005ff7 +org.pythonmac.unspecified.poclbm (0.0.0 - 0.0.0) <8C77F687-4C7C-5570-85C8-D6BC781276B1> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/MacOS/poclbm
+       0x100008000 -        0x100009ff7  libSystem.B.dylib (169.3) <5ED23C27-47AF-3C93-984A-172751CF745A> /usr/lib/libSystem.B.dylib
+       0x100010000 -        0x100015fff  libcache.dylib (57) <65187C6E-3FBF-3EB8-A1AA-389445E2984D> /usr/lib/system/libcache.dylib
+       0x10001a000 -        0x100028fff  libcommonCrypto.dylib (60027) <BAAFE0C9-BB86-3CA7-88C0-E3CBA98DA06F> /usr/lib/system/libcommonCrypto.dylib
+       0x100035000 -        0x10003afff  libcompiler_rt.dylib (30) <08F8731D-5961-39F1-AD00-4590321D24A9> /usr/lib/system/libcompiler_rt.dylib
+       0x100042000 -        0x100049fff  libcopyfile.dylib (89) <876573D0-E907-3566-A108-577EAD1B6182> /usr/lib/system/libcopyfile.dylib
+       0x100050000 -        0x100065ff7  libdispatch.dylib (228.23) <D26996BF-FC57-39EB-8829-F63585561E09> /usr/lib/system/libdispatch.dylib
+       0x10007a000 -        0x10007bff7  libdnsinfo.dylib (453.19) <14202FFB-C3CA-3FCC-94B0-14611BF8692D> /usr/lib/system/libdnsinfo.dylib
+       0x100080000 -        0x100083ff7  libdyld.dylib (210.2.3) <F59367C9-C110-382B-A695-9035A6DD387E> /usr/lib/system/libdyld.dylib
+       0x10008a000 -        0x10008afff  libkeymgr.dylib (25) <CC9E3394-BE16-397F-926B-E579B60EE429> /usr/lib/system/libkeymgr.dylib
+       0x10008e000 -        0x100096fff  liblaunch.dylib (442.26.2) <2F71CAF8-6524-329E-AC56-C506658B4C0C> /usr/lib/system/liblaunch.dylib
+       0x10009e000 -        0x1000a4fff  libmacho.dylib (829) <BF332AD9-E89F-387E-92A4-6E1AB74BD4D9> /usr/lib/system/libmacho.dylib
+       0x1000a9000 -        0x1000abfff  libquarantine.dylib (52.1) <143B726E-DF47-37A8-90AA-F059CFD1A2E4> /usr/lib/system/libquarantine.dylib
+       0x1000b0000 -        0x1000b1ff7  libremovefile.dylib (23.2) <6763BC8E-18B8-3AD9-8FFA-B43713A7264F> /usr/lib/system/libremovefile.dylib
+       0x1000b7000 -        0x1000b8fff  libsystem_blocks.dylib (59) <D92DCBC3-541C-37BD-AADE-ACC75A0C59C8> /usr/lib/system/libsystem_blocks.dylib
+       0x1000bd000 -        0x100189ff7  libsystem_c.dylib (825.26) <4C9EB006-FE1F-3F8F-8074-DFD94CF2CE7B> /usr/lib/system/libsystem_c.dylib
+       0x1001cc000 -        0x1001d4ff7  libsystem_dnssd.dylib (379.38.1) <BDCB8566-0189-34C0-9634-35ABD3EFE25B> /usr/lib/system/libsystem_dnssd.dylib
+       0x1001da000 -        0x100210fff  libsystem_info.dylib (406.17) <4FFCA242-7F04-365F-87A6-D4EFB89503C1> /usr/lib/system/libsystem_info.dylib
+       0x100228000 -        0x100243ff7  libsystem_kernel.dylib (2050.24.15) <A9F97289-7985-31D6-AF89-151830684461> /usr/lib/system/libsystem_kernel.dylib
+       0x100255000 -        0x100283ff7  libsystem_m.dylib (3022.6) <B434BE5C-25AB-3EBD-BAA7-5304B34E3441> /usr/lib/system/libsystem_m.dylib
+       0x10028e000 -        0x10029cff7  libsystem_network.dylib (77.10) <0D99F24E-56FE-380F-B81B-4A4C630EE587> /usr/lib/system/libsystem_network.dylib
+       0x1002a9000 -        0x1002b4fff  libsystem_notify.dylib (98.5) <C49275CC-835A-3207-AFBA-8C01374927B6> /usr/lib/system/libsystem_notify.dylib
+       0x1002bd000 -        0x1002beff7  libsystem_sandbox.dylib (220.3) <B739DA63-B675-387A-AD84-412A651143C0> /usr/lib/system/libsystem_sandbox.dylib
+       0x1002c3000 -        0x1002c5ff7  libunc.dylib (25) <92805328-CD36-34FF-9436-571AB0485072> /usr/lib/system/libunc.dylib
+       0x1002cb000 -        0x1002d1ff7  libunwind.dylib (35.1) <21703D36-2DAB-3D8B-8442-EAAB23C060D3> /usr/lib/system/libunwind.dylib
+       0x1002d8000 -        0x1002faff7  libxpc.dylib (140.43) <70BC645B-6952-3264-930C-C835010CCEF9> /usr/lib/system/libxpc.dylib
+       0x100312000 -        0x100361ff7  libcorecrypto.dylib (106.2) <CE0C29A3-C420-339B-ADAA-52F4683233CC> /usr/lib/system/libcorecrypto.dylib
+       0x10036f000 -        0x10048792f  libobjc.A.dylib (532.2) <90D31928-F48D-3E37-874F-220A51FD9E37> /usr/lib/libobjc.A.dylib
+       0x1004a7000 -        0x1004f3ff7  libauto.dylib (185.4) <AD5A4CE7-CB53-313C-9FAE-673303CC2D35> /usr/lib/libauto.dylib
+       0x10050a000 -        0x10052fff7  libc++abi.dylib (26) <D86169F3-9F31-377A-9AF3-DB17142052E4> /usr/lib/libc++abi.dylib
+       0x100560000 -        0x1005c8ff7  libc++.1.dylib (65.1) <20E31B90-19B9-3C2A-A9EB-474E08F9FE05> /usr/lib/libc++.1.dylib
+       0x100621000 -        0x100622fff  libDiagnosticMessagesClient.dylib (8) <8548E0DC-0D2F-30B6-B045-FE8A038E76D8> /usr/lib/libDiagnosticMessagesClient.dylib
+       0x100658000 -        0x10066aff7  libz.1.dylib (43) <2A1551E8-A272-3DE5-B692-955974FE1416> /usr/lib/libz.1.dylib
+       0x1006e3000 -        0x1006e5ff7 +zlib.so (???) <295F47CF-D83B-39BA-A6EB-756E0C2ADAAA> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/zlib.so
+       0x1006e9000 -        0x1006ebff7 +time.so (???) <BFF98CEE-4DF9-3B26-B82D-3B49545AA00D> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/time.so
+       0x1006ef000 -        0x1006f3fff +_struct.so (???) <D3778421-9F00-3A1A-A184-12668405D148> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/_struct.so
+       0x1006f9000 -        0x1006fcfff +_collections.so (???) <2046E0C9-3861-3CD1-9CCD-CAFCFBC916B0> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/_collections.so
+       0x101000000 -        0x1011eaff7  com.apple.CoreFoundation (6.8 - 744.19) <0F7403CA-2CB8-3D0A-992B-679701DF27CA> /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+       0x101349000 -        0x101549fff  libicucore.A.dylib (491.11.3) <5783D305-04E8-3D17-94F7-1CEAFA975240> /usr/lib/libicucore.A.dylib
+       0x1015ea000 -        0x101653fff  libstdc++.6.dylib (56) <EAA2B53E-EADE-39CF-A0EF-FB9D4940672A> /usr/lib/libstdc++.6.dylib
+       0x1016f8000 -        0x1016f8fff +_bisect.so (???) <194DB222-21E1-38D6-8FC1-D2C8627BAAC5> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/_bisect.so
+       0x1016fb000 -        0x1016fcfff +_heapq.so (???) <5D4CFAA1-BFD8-3F0C-9D62-4DACA9D92F55> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/_heapq.so
+       0x101800000 -        0x101809fff +fftpack_lite.so (???) <D236CCE4-587C-3B8E-A240-45B65F374881> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/numpy/fft/fftpack_lite.so
+       0x10184c000 -        0x10184ffff +strop.so (???) <503527D4-477A-3B15-912E-40AE7937A270> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/strop.so
+       0x1018f3000 -        0x1018f7ff7 +operator.so (???) <F7C0F8B6-44B5-3B3F-B51A-A28B577CD4F4> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/operator.so
+       0x1018fc000 -        0x1018fdff7 +_functools.so (???) <31B72D06-61B9-37B7-A064-6A78A7D7CAAB> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/_functools.so
+       0x101c89000 -        0x101dc8fe7 +org.python.python (2.7.2, [c] 2004-2011 Python Software Foundation. - 2.7.2) <68DC1726-D9DA-3AF3-B5A1-B86EC47F62B6> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Frameworks/Python.framework/Versions/2.7/Python
+       0x101eeb000 -        0x101effff7 +_ctypes.so (???) <FF2CE56F-040D-3792-B383-F4FEC8BAA672> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/_ctypes.so
+       0x101f08000 -        0x101f0efff +itertools.so (???) <176A5F3E-C117-3D58-9CED-08D5B0341707> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/itertools.so
+       0x101f57000 -        0x101f5dfe7 +math.so (???) <C59ECE07-D77E-3F64-B2D0-58B8C5782F64> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/math.so
+       0x101f61000 -        0x101f62fff +_locale.so (???) <03107637-903B-3CBD-9BD3-CEBDE2D1D954> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/_locale.so
+       0x101f65000 -        0x101f66fff +_hashlib.so (???) <5AE57303-F8C7-32B5-A3B5-D8549AE729BE> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/_hashlib.so
+       0x101f69000 -        0x101fa0ff7  libssl.0.9.8.dylib (47.1) <B7C438BB-79FF-37B3-B8FB-253E5135CBB4> /usr/lib/libssl.0.9.8.dylib
+       0x101fb6000 -        0x101fb8fff  com.apple.TrustEvaluationAgent (2.0 - 23) <A97D348B-32BF-3E52-8DF2-59BFAD21E1A3> /System/Library/PrivateFrameworks/TrustEvaluationAgent.framework/Versions/A/TrustEvaluationAgent
+       0x101fbd000 -        0x101fcaff7 +datetime.so (???) <CABD7C16-98E4-3530-89DE-63B0BDFB4CFB> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/datetime.so
+       0x101fd2000 -        0x101fe8fff +_sort.so (???) <CF98FF66-6637-343B-A930-83DFD7E79FA6> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/numpy/core/_sort.so
+       0x101feb000 -        0x101feefff +_dotblas.so (???) <61F8BFFF-AB84-3A41-ABF0-37D15EA436B7> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/numpy/core/_dotblas.so
+       0x101ff1000 -        0x101ff1fff  com.apple.Accelerate (1.8 - Accelerate 1.8) <6AD48543-0864-3D40-80CE-01F184F24B45> /System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+       0x101ff4000 -        0x101ff4fff  com.apple.Accelerate.vecLib (3.8 - vecLib 3.8) <B5A18EE8-DF81-38DD-ACAF-7076B2A26225> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+       0x101ff7000 -        0x101ff8ff7 +cStringIO.so (???) <AE6B1FC4-B91B-3033-83AB-A794E0ABB3EA> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/cStringIO.so
+       0x101ffc000 -        0x101ffcfff +grp.so (???) <DCC8B9F0-E9C9-38A8-9D3C-7E6D2B7D0617> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/grp.so
+       0x102800000 -        0x102902fff  libcrypto.0.9.8.dylib (47.1) <72AA650B-0453-3BB4-BA03-824627BB199C> /usr/lib/libcrypto.0.9.8.dylib
+       0x1029e8000 -        0x102acbfff +multiarray.so (???) <DA3930A2-1D2B-3D0D-96B8-29EDAB0EEEAE> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/numpy/core/multiarray.so
+       0x102ae7000 -        0x102b2cfff +umath.so (???) <069291E2-9F93-327A-9A60-972452293BD8> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/numpy/core/umath.so
+       0x102c39000 -        0x102dd4fef  com.apple.vImage (6.0 - 6.0) <FAE13169-295A-33A5-8E6B-7C2CC1407FA7> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+       0x102df5000 -        0x102e5dfff  libvDSP.dylib (380.6) <CD4C5EEB-9E63-30C4-8103-7A5EAEA0BE60> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+       0x102e66000 -        0x102f00fff  libvMisc.dylib (380.6) <714336EA-1C0E-3735-B31C-19DFDAAF6221> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+       0x102f0b000 -        0x103302fff  libLAPACK.dylib (1073.4) <D632EC8B-2BA0-3853-800A-20DA00A1091C> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+       0x103365000 -        0x1034ebfff  libBLAS.dylib (1073.4) <C102C0F6-8CB6-3B49-BA6B-2EB61F0B2784> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+       0x103519000 -        0x103527ff7 +cPickle.so (???) <9E4EF149-042F-3C48-AE58-CB4968D5E5F7> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/lib-dynload/cPickle.so
+       0x10352b000 -        0x10354cfe7 +scalarmath.so (???) <6E192DCA-7559-3A78-81DF-E08865BA4D68> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/numpy/core/scalarmath.so
+       0x1035d1000 -        0x1035d5fff +_compiled_base.so (???) <A2C4753A-A2FE-33A2-AB97-C9BCFDAD1E53> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/numpy/lib/_compiled_base.so
+       0x103618000 -        0x10361bff7 +lapack_lite.so (???) <5FF00364-B1CE-3DB0-9032-F4E43B4F939C> /Applications/guiminer.app/Contents/MacOS/poclbm.app/Contents/Resources/lib/python2.7/numpy/linalg/lapack_lite.so
+    0x7fff63011000 -     0x7fff6304593f  dyld (210.2.3) <6900F2BA-DB48-3B78-B668-58FC0CF6BCB8> /usr/lib/dyld
+
+External Modification Summary:
+  Calls made by other processes targeting this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by all processes on this machine:
+    task_for_pid: 173
+    thread_create: 0
+    thread_set_state: 0
+
+VM Region Summary:
+ReadOnly portion of Libraries: Total=25.7M resident=15.8M(61%) swapped_out_or_unallocated=9.9M(39%)
+Writable regions: Total=36.5M written=8968K(24%) resident=11.2M(31%) swapped_out=0K(0%) unallocated=25.3M(69%)
+ 
+REGION TYPE                      VIRTUAL
+===========                      =======
+MALLOC                             26.5M
+MALLOC guard page                    32K
+STACK GUARD                        56.0M
+Stack                              8712K
+VM_ALLOCATE                          12K
+__DATA                             1836K
+__LINKEDIT                         4472K
+__TEXT                             21.4M
+__UNICODE                           544K
+shared memory                        12K
+===========                      =======
+TOTAL                             119.2M
+
+System Profile:
+Model: MacBook6,1, BootROM MB61.00C8.B00, 2 processors, Intel Core 2 Duo, 2.26 GHz, 8 GB, SMC 1.51f53
+Graphics: NVIDIA GeForce 9400M, NVIDIA GeForce 9400M, PCI, 256 MB
+Memory Module: BANK 0/DIMM0, 4 GB, DDR3, 1333 MHz, 0x01BA, 0x202020202020202020202020202020202020
+Memory Module: BANK 1/DIMM0, 4 GB, DDR3, 1333 MHz, 0x01BA, 0x202020202020202020202020202020202020
+AirPort: spairport_wireless_card_type_airport_extreme (0x14E4, 0x93), Broadcom BCM43xx 1.0 (5.106.98.100.17)
+Bluetooth: Version 4.1.4f2 12041, 2 service, 18 devices, 1 incoming serial ports
+Network Service: Ethernet, Ethernet, en0
+Network Service: Wi-Fi, AirPort, en1
+Serial ATA Device: TOSHIBA MQ01ABD100, 1 TB
+Serial ATA Device: MATSHITADVD-R   UJ-898, 3,55 GB
+USB Device: Built-in iSight, apple_vendor_id, 0x8507, 0x24400000 / 2
+USB Device: Apple Internal Keyboard / Trackpad, apple_vendor_id, 0x0237, 0x04600000 / 3
+USB Device: USB Receiver, 0x046d  (Logitech Inc.), 0xc52f, 0x04100000 / 2
+USB Device: BRCM2070 Hub, 0x0a5c  (Broadcom Corp.), 0x4500, 0x06100000 / 2
+USB Device: Bluetooth USB Host Controller, apple_vendor_id, 0x8218, 0x06130000 / 3

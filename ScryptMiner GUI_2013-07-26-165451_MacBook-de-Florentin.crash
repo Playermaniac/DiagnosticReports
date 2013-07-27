@@ -1,0 +1,70 @@
+Process:         ScryptMiner GUI [433]
+Path:            /Applications/Scrypt Miner GUI - OSX/ScryptMiner GUI.app/Contents/MacOS/ScryptMiner GUI
+Identifier:      com.yourcompany.ScryptMiner GUI
+Version:         ???
+Code Type:       X86-64 (Native)
+Parent Process:  launchd [209]
+User ID:         501
+
+Date/Time:       2013-07-26 16:54:51.270 +0200
+OS Version:      Mac OS X 10.8.4 (12E55)
+Report Version:  10
+
+Interval Since Last Report:          1849 sec
+Crashes Since Last Report:           2
+Per-App Crashes Since Last Report:   2
+Anonymous UUID:                      E410036A-2F75-E63F-560C-755FB9A914FD
+
+Crashed Thread:  0
+
+Exception Type:  EXC_BREAKPOINT (SIGTRAP)
+Exception Codes: 0x0000000000000002, 0x0000000000000000
+
+Application Specific Information:
+dyld: launch, loading dependent libraries
+
+Dyld Error Message:
+  Library not loaded: /Users/*/QtGui.framework/Versions/4/QtGui
+  Referenced from: /Applications/Scrypt Miner GUI - OSX/ScryptMiner GUI.app/Contents/MacOS/ScryptMiner GUI
+  Reason: image not found
+
+Binary Images:
+       0x100000000 -        0x100036fff +com.yourcompany.ScryptMiner GUI (???) <5F2258C1-7FB3-3209-9F53-3903132F9C36> /Applications/Scrypt Miner GUI - OSX/ScryptMiner GUI.app/Contents/MacOS/ScryptMiner GUI
+    0x7fff61da4000 -     0x7fff61dd893f  dyld (210.2.3) <6900F2BA-DB48-3B78-B668-58FC0CF6BCB8> /usr/lib/dyld
+
+System Profile:
+Model: MacBook6,1, BootROM MB61.00C8.B00, 2 processors, Intel Core 2 Duo, 2.26 GHz, 8 GB, SMC 1.51f53
+Graphics: NVIDIA GeForce 9400M, NVIDIA GeForce 9400M, PCI, 256 MB
+Memory Module: BANK 0/DIMM0, 4 GB, DDR3, 1333 MHz, 0x01BA, 0x202020202020202020202020202020202020
+Memory Module: BANK 1/DIMM0, 4 GB, DDR3, 1333 MHz, 0x01BA, 0x202020202020202020202020202020202020
+AirPort: spairport_wireless_card_type_airport_extreme (0x14E4, 0x93), Broadcom BCM43xx 1.0 (5.106.98.100.17)
+Bluetooth: Version 4.1.4f2 12041, 2 service, 18 devices, 1 incoming serial ports
+Network Service: Ethernet, Ethernet, en0
+Network Service: Wi-Fi, AirPort, en1
+Serial ATA Device: TOSHIBA MQ01ABD100, 1 TB
+Serial ATA Device: MATSHITADVD-R   UJ-898
+USB Device: hub_device, apple_vendor_id, 0x9130, 0x26200000 / 2
+USB Device: Hub in Apple Extended USB Keyboard, apple_vendor_id, 0x1003, 0x26230000 / 5
+USB Device: Blue Snowball, 0x0d8c  (C-MEDIA ELECTRONICS INC.), 0x0005, 0x26231000 / 10
+USB Device: Razer Nostromo, 0x1532, 0x0111, 0x26232000 / 11
+USB Device: Apple Extended USB Keyboard, apple_vendor_id, 0x020c, 0x26233000 / 9
+USB Device: USB 2.0 Hub, 0x1a40  (TERMINUS TECHNOLOGY INC.), 0x0101, 0x26210000 / 4
+USB Device: EPSON Scanner, 0x04b8  (Seiko Epson Corp.), 0x0131, 0x26213000 / 8
+USB Device: iPhone, apple_vendor_id, 0x1297, 0x26212000 / 7
+USB Device: My Book 1110, 0x1058  (Western Digital Technologies, Inc.), 0x1110, 0x26214000 / 6
+USB Device: Apple Cinema Display, apple_vendor_id, 0x9222, 0x26220000 / 3
+USB Device: USB 2.0 Hub [MTT], 0x1a40  (TERMINUS TECHNOLOGY INC.), 0x0201, 0x24100000 / 3
+USB Device: EyeTV DTT Dlx, 0x0fd9, 0x002c, 0x24170000 / 9
+USB Device: JD FireFly, 0x05dc  (Lexar Media, Inc.), 0xa731, 0x24160000 / 8
+USB Device: SuperMulti RW, 0x152e  (HLDS (Hitachi-LG Data Storage, Inc.)), 0x1640, 0x24140000 / 7
+USB Device: CTL-470, 0x056a  (WACOM Co., Ltd.), 0x00dd, 0x24130000 / 6
+USB Device: USB2.0 Hub, 0x05e3  (Genesys Logic, Inc.), 0x0608, 0x24150000 / 5
+USB Device: Video Express, 0x18f3, 0x0010, 0x24154000 / 13
+USB Device: Mass Storage Device, 0x1307  (USBest Technology Inc.), 0x0330, 0x24153000 / 12
+USB Device: iPod, apple_vendor_id, 0x1293, 0x24152000 / 11
+USB Device: E-USB Bridge, 0x04e6  (Shuttle Technology), 0x0001, 0x24151000 / 10
+USB Device: USB Receiver, 0x046d  (Logitech Inc.), 0xc52f, 0x24110000 / 4
+USB Device: Built-in iSight, apple_vendor_id, 0x8507, 0x24400000 / 2
+USB Device: BRCM2070 Hub, 0x0a5c  (Broadcom Corp.), 0x4500, 0x06100000 / 2
+USB Device: Bluetooth USB Host Controller, apple_vendor_id, 0x8218, 0x06130000 / 4
+USB Device: Apple Internal Keyboard / Trackpad, apple_vendor_id, 0x0237, 0x04600000 / 2
